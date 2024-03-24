@@ -1,0 +1,32 @@
+using System;
+class triangle_height
+{
+	static void Main(string[] args)
+	{
+		Console.WriteLine("Enter the hight of trinagle to print:");
+		int height_of_triangle;
+		if(int.TryParse(Console.ReadLine(),out height_of_triangle))
+		{
+			PrintTriangle(height_of_triangle);
+		}
+		else
+		{
+			Console.WriteLine("Invalid input Please can you enter vaild integer.");
+		}
+	}
+	static void PrintTriangle(int height_of_triangle)
+	{
+		for(int i=1;i<=height_of_triangle;i++)
+		{
+			for(int j=1;j<=height_of_triangle-i;j++)
+			{
+				Console.Write(" ");
+			}
+			for(int k=1;k<=2*i-1;k++)
+			{
+				Console.Write("*");
+			}
+			Console.WriteLine();
+		}
+	}
+}

@@ -1,0 +1,25 @@
+using System;
+using System.Text.RegularExpressions;
+class find_valid_date
+{
+	static void Main(string[] args)
+	{
+		Console.WriteLine("Enter a string to find vaild date pattern:");
+		string inputstring=Console.ReadLine();
+		string pattern=@"\b(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])(19|20)\d{2}\b";
+		Regex regex=new Regex(pattern);
+		MatchCollection matches=regex.Matches(inputstring);
+		if(matches.Count==0)
+		{
+			Console.WriteLine("No Date pattern is found in the given input string:"); 
+		}
+		else
+		{
+			Console.WriteLine("Date pattern is found in the given input string is :");
+			foreach(Match match in matches)
+			{
+				Console.WriteLine(match.Value);
+			}
+		}
+	}
+}
